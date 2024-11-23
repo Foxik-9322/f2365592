@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>С днём рождения</title>
+	<link rel="icon" type="image/png" href="surprise.png" sizes="512x512">
+	<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+	<div class="container">
+		<div class="column-blocks">
+			<div class="image-container">
+				<img src="main5.png" class="main-image">
+				<img src="face.png" class="face_">
+				<img src="ramka.png" class="ramka">
+			</div>
+			<div class="rectangle4">
+				<div class="half1-rect4">
+					<ul class="slides">
+						<input type="radio" name="radio-btn" id="img-1" checked />
+						<li class="slide-container">
+						<div class="slide">
+						  <img src="img-1.jpg" />
+							</div>
+						<div class="nav">
+						  <label for="img-5" class="prev">&#x2039;</label>
+						  <label for="img-2" class="next">&#x203a;</label>
+						</div>
+						</li>
+
+						<input type="radio" name="radio-btn" id="img-2" />
+						<li class="slide-container">
+							<div class="slide">
+							  <img src="img-2.jpg" />
+							</div>
+						<div class="nav">
+						  <label for="img-1" class="prev">&#x2039;</label>
+						  <label for="img-3" class="next">&#x203a;</label>
+						</div>
+						</li>
+
+						<input type="radio" name="radio-btn" id="img-3" />
+						<li class="slide-container">
+							<div class="slide">
+							  <img src="img-3.jpg" />
+							</div>
+						<div class="nav">
+						  <label for="img-2" class="prev">&#x2039;</label>
+						  <label for="img-4" class="next">&#x203a;</label>
+						</div>
+						</li>
+
+						<input type="radio" name="radio-btn" id="img-4" />
+						<li class="slide-container">
+							<div class="slide">
+							  <img src="img-4.jpg" />
+							</div>
+						<div class="nav">
+						  <label for="img-3" class="prev">&#x2039;</label>
+						  <label for="img-5" class="next">&#x203a;</label>
+						</div>
+						</li>
+
+						<input type="radio" name="radio-btn" id="img-5" />
+						<li class="slide-container">
+							<div class="slide">
+							  <img src="img-5.jpg" />
+							</div>
+						<div class="nav">
+						  <label for="img-4" class="prev">&#x2039;</label>
+						  <label for="img-1" class="next">&#x203a;</label>
+						</div>
+						</li>
+
+						<li class="nav-dots">
+						  <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+						  <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+						  <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+						  <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+						  <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+						</li>
+					</ul>
+				</div>
+				<div class="half2-rect4">
+					<div class="text-rect4">Воспоминания</div>
+					<div class="line-rect4"></div>
+					<div class="text2-rect4">Да, фоток немного. Но я думаю,<br>мы решим эту проблему вместе!</div>
+				</div>
+			</div>
+			<div class="block-column">
+				<div class="rectangle5">
+					<div class="text-rect5">Почему ты особенная</div>
+					<div class="line-rect5"></div>
+					<div class="boxes">
+						<div class="background-image"></div>
+					</div>
+				</div>
+			</div>
+			<div class="block-column">
+				<div class="rectangle6">
+					<!-- <div id="countdown"></div> -->
+					<div class="row">
+						<div class="image-column">
+							<img src="carta.png" alt="Carta" class="carta">
+						</div>
+						<div class="text-column">
+							<p class="text-rect6">Между нами 1500 километров. Но взгляни - на самом деле это совсем не много!</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="text2-column">
+							<p class="text-rect6">Мы знакомы с тобой: </p>
+						</div>
+						<div id="countdown"></div>
+						<div class="final-text">Пускай эта цифра и дальше будет увеличиваться!</div>
+						<div class="image2-column">
+							<img src="ramka2.png" alt="Carta" class="carta2">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		window.onload = function() {
+			window.scrollTo(0, 0);
+		};
+	</script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const faceImage = document.querySelector('.face_');
+			setTimeout(() => {
+				faceImage.classList.add('visible');
+			}, 0);
+		});
+	</script>
+
+	<script>
+		const bookImage = document.querySelector('.book-image-animation');
+
+		window.onload = function() {
+		  bookImage.classList.add('show');
+		};
+	</script>
+
+	<script>
+		const multiArray = [['Твоя улыбка', 'Магия, призывающая ко всем хорошим моментам, ведь когда ты улыбаешься, мир вокруг становится значительно лучше.'], ['Каждый момент с тобой', 'Маленькое чудо, которое я храню в своем сердце, как самое сокровенное воспоминание.'], ['Твои объятия', 'Тихая гавань, в которой мне всегда комфортно и спокойно, словно я нашел свой дом.'], ['Твоя забота', 'Теплое одеяло в холодную ночь, которое всегда согревает меня и дает ощущение безопасности.'], ['Твоя поддержка', 'Лучший подарок, который я когда-либо получал, и знание, что ты всегда рядом, делает меня сильнее.'], ['Твоя искренность', 'Волшебство, которое делает наши разговоры душевными и открытыми, я чувствую, что могу делиться с тобой всем.'], ['Твоя уникальность', 'Те черты, которые делают тебя особенно привлекательной, и я ценю каждую деталь твоей личности.'], ['Твоя вера в меня', 'Крепкий тыл, на который я всегда могу опираться, она помогает мне двигаться вперед, даже когда я сомневаюсь.'], ['Твои слова', 'Ласковый ветер, который нежно касается моего лица и внушает мне уверенность в том, что я могу все.'], ['Твоя страсть к жизни', 'Искра, которая зажигает огонь в моем сердце и наполняет его желанием делать что-то великое.'], ['Твои идеи и мечты', 'Звезды на моем небе, которые вдохновляют меня, заставляя поверить, что и мои мечты также могут сбыться.'], ['Твоя индивидуальность', 'Удивительный коктейль, который делает каждую нашу встречу уникальной и незабываемой.'], ['Твоя преданность', 'Ресурс, на который я всегда могу рассчитывать, ведь ты всегда рядом, когда я в этом нуждаюсь.'], ['Твоя храбрость', 'Вдохновляет меня на то, чтобы быть более смелым и действовать в тех ситуациях, которые раньше казались пугающими.'], ['Твоя энергия', 'Мощный заряд, который заставляет меня двигаться вперед и искать новые приключения в жизни.'], ['Твоё терпение со мной', 'Настоящая подвиг, потому что ты всегда находишь время и силы понимать меня, даже когда я не самый легкий человек.'], ['Твоя надежность', 'Крепкий фундамент, на котором строится наше доверие и связи, и я благодарен, что ты есть в моей жизни.'], ['Твой оптимизм', 'То, что позволяет мне смотреть на будущее с надеждой и верить в лучшее.'], ['Твоя честность', 'Чистое и прозрачное качество, которое делает наши отношения крепкими и искренними.'], ['Твоя радость от простых вещей', 'Напоминание о том, как важно наслаждаться жизнью и находить счастье в каждодневных моментах.'], ['Твой взгляд на жизнь', 'Вдохновение для меня, ты учишь меня ценить каждый момент и находить радость в мелочах.'], ['Твоя страсть к обучению', 'Вдохновляющий пример, и я всегда восхищался тем, как ты настойчиво идёшь к своим мечтам.'], ['Твое присутствие', 'Подарок от судьбы, который наполняет мою жизнь смыслом и счастьем.'], ['Твой вкус в музыке', 'Отражение твоей души, и каждый раз, когда я слышу твою любимую песню, я впечатлён тем, как она передает твои эмоции.'], ['Твои глаза', 'Океан эмоций, в котором я хочу утонуть, они всегда отражают искренность и тепло твоей души.'], ['Твой смех', 'Мелодия, которая звучит в моем сердце, и каждый раз, когда я его слышу, мне становится на удивление легко и радостно.'], ['Твоё внимание к деталям', 'То, что делает все наши моменты вместе особенно значительными и запоминающимися.'], ['Твои способности', 'Нечто удивительное, и я всегда восхищаюсь тем, как ты справляешься с любыми задачами.'], ['Твои мечты и цели', 'Вдохновляют не только тебя, но и меня на то, чтобы мы шли к ним вместе, как команда.'], ['Твои руки', 'Как родные, которые всегда готовы поддержать и обнять в трудный момент, они дарят мне невероятное спокойствие.'], ['Твои привычки', 'Маленькие ритуалы, которые делают наше время вместе особенным и искренним, и я обожаю их.'], ['Твои маленькие жесты заботы', 'Сладкие моменты, которые заставляют моё сердце трепетать от счастья и радости.'], ['Ты как воздух', 'Тираж счастья, без которого мне было бы крайне трудно дышать.'], ['Твоя настойчивость', 'Невероятное качество, которое вдохновляет меня не сдаваться в достижении своих целей.'], ['Твоя самобытность', 'Часть твоего очарования, и я восхищаюсь тем, как ты остаёшься самой собой в любой ситуации.'], ['Твоя красота', 'Не просто внешность, а глубина твоей души, которая светится изнутри.'], ['Твоя утонченность и грация', 'Те качества, которые делают каждое мгновение с тобой уникальным и волшебным.'], ['Твоя естественность', 'То, что меня привлекает в тебе, и я ценю каждую часть твоей жизни.'], ['Твой стиль и вкус', 'Шикарная палитра, которая красит все вокруг и придаёт особенный шарм нашим моментам вместе.'], ['Твое стремление к самосовершенствованию', 'Пример для меня, и я рад, что могу наблюдать за твоими успехами.']]
+		const boxes = document.querySelector('.boxes');
+		const cardTemplate = `
+		<div class="card">
+			<div class="face face1">
+				<div class="content">
+					<i></i>
+					<h3 class="card-title"></h3> 
+				</div>
+			</div>
+			<div class="face face2">
+				<div class="content">
+					<p class="card-text"></p>
+				</div>
+			</div>
+		</div>
+		`;
+
+		for (let i = 0; i < multiArray.length; i++) {
+			const newCard = document.createElement('div');
+			newCard.innerHTML = cardTemplate;
+
+			const cardTitle = newCard.querySelector('.card-title');
+			const cardText = newCard.querySelector('.card-text');
+
+			cardTitle.textContent = `${multiArray[i][0]}`;
+			cardText.textContent = `${multiArray[i][1]}`;
+
+			cardTitle.style.fontFamily = 'FuturaNowBd, sans-serif';
+			cardText.style.fontFamily = 'FuturaNowBd, sans-serif';
+
+			boxes.appendChild(newCard);
+		}
+	</script>
+
+	<script>
+		const startDate = new Date('2022-09-01T00:00:00');
+
+		function updateElapsedTime() {
+			const now = new Date();
+			const elapsedTime = now - startDate;
+
+			const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+			const hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+			const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+			/*
+			document.getElementById('countdown').textContent = 
+			`${days}д : ${hours}ч : ${minutes}м : ${seconds}с`;
+			*/
+
+			document.getElementById('countdown').textContent = 
+			`${days}д : ${hours}ч : ${minutes}м`;
+		}
+
+		setInterval(updateElapsedTime, 1000); 
+		updateElapsedTime(); 
+	</script>
+
+</body>
+</html>

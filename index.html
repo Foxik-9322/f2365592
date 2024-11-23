@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<title>Вход на сайт</title>
+		<link rel="icon" type="image/png" href="lock.png" sizes="512x512">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link href="/css/styles.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	</head>
+	<body>
+		<div class="gradient-background">
+			<div class="d-flex flex-column justify-content-center w-100 h-100">
+				<div class="d-flex flex-column justify-content-center align-items-center">
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="login-box">
+				<form id="loginForm">
+					<div class="text-at-top">Войдите на сайт</div>
+					<div class="user-box">
+						<input type="text" id="username" required>
+						<label>Имя</label>
+					</div>
+					<div class="user-box">
+						<input type="text" id="birthday" required>
+						<label>Дата рождения</label>
+					</div>
+					<button id="login-button" class="button-login">Войти</button>
+					<div class="text-at-down">Обратная связь</div>
+					<div class="parent-container">
+						<ul class="wrapper">
+							<li class="icon telegram" onclick="window.open('https://t.me/s_l_a_v_k_a_133', '_blank');"><i class="fab fa-telegram"></i></li>
+							<li class="icon tiktok" onclick="window.open('https://www.tiktok.com/@s_l_a_v_k_a_13?_t=8qXI93ED76W&_r=1', '_blank');"><i class="fab fa-tiktok"></i></li>
+							<li class="icon vk" onclick="window.open('https://vk.com/s_l_a_v_k_a', '_blank');"><i class="fab fa-vk"></i></li>
+						</ul>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<script>
+			const loginButton = document.getElementById('login-button');
+			const usernameInput = document.getElementById('username');
+			const birthdayInput = document.getElementById('birthday'); 
+
+			loginButton.addEventListener('click', (event) => {
+				event.preventDefault();
+
+				const username = usernameInput.value.trim();
+				const birthday = birthdayInput.value;
+
+				if (username === "") {
+					alert("Пожалуйста, введите имя.");
+					return; 
+				}
+
+				const datePattern = /^\d{2}\.\d{2}\.\d{4}$/;
+				if (!datePattern.test(birthday)) {
+					alert('Пожалуйста, введите дату в формате ДД.ММ.ГГГГ');
+					return;
+				}
+
+				const [day, month, year] = birthday.split('.');
+				const date = new Date(year, month - 1, day);
+				if (date.getDate() !== parseInt(day) ||
+					date.getMonth() !== parseInt(month) - 1 ||
+					date.getFullYear() !== parseInt(year)) {
+					return;
+				}
+
+				window.location.href = "site2.html"; 
+			});
+		</script>
+
+		<canvas id="rainfall"></canvas>
+
+		<script>
+			const canvas = document.getElementById('rainfall');
+			const ctx = canvas.getContext('2d');
+
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+
+			const raindrops = [];
+
+			function createRaindrop() {
+				const x = Math.random() * canvas.width;
+				const y = -5;
+				const speed = Math.random() * 5 + 2;
+				const length = Math.random() * 20 + 10;
+
+				raindrops.push({ x, y, speed, length });
+			}
+
+			function updateRaindrops() {
+				for (let i = 0; i < raindrops.length; i++) {
+					const raindrop = raindrops[i];
+
+					raindrop.y += raindrop.speed;
+
+					if (raindrop.y > canvas.height) {
+						raindrops.splice(i, 1);
+						i--;
+					}
+				}
+			}
+
+			function drawRaindrops() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+				ctx.strokeStyle = 'white';
+				ctx.lineWidth = 2;
+
+				for (let i = 0; i < raindrops.length; i++) {
+					const raindrop = raindrops[i];
+
+					ctx.beginPath();
+					ctx.moveTo(raindrop.x, raindrop.y);
+					ctx.lineTo(raindrop.x, raindrop.y + raindrop.length);
+					ctx.stroke();
+				}
+			}
+
+			function animate() {
+				createRaindrop();
+				updateRaindrops();
+				drawRaindrops();
+
+				requestAnimationFrame(animate);
+			}
+
+			animate();
+		</script>
+	</body>
+</html>
